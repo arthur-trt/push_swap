@@ -1,0 +1,4 @@
+.vscode
+checker/checker
+*.o
+*.d
