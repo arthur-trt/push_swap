@@ -6,23 +6,28 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:15:12 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/08 15:22:01 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/08 19:02:30 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_STRUCTURES_H
 # define CHECKER_STRUCTURES_H
 
+#include <stdbool.h>
+
 typedef struct		s_number
 {
-	int				a;
-	int				b;
+	int				*a;
+	int				*b;
 }					t_number;
 
 
 typedef struct		s_stack
 {
-	t_number		*num;
+	bool			a_set;
+	int				a;
+	bool			b_set;
+	int				b;
 	struct s_stack	*next;
 }					t_stack;
 

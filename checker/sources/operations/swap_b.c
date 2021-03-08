@@ -1,36 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   swap_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 16:14:38 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/08 19:11:17 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/08 19:21:05 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/08 19:35:42 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-/*
-**	Print the stack to STDOUT
-**
-**	@param stack Stack to print
-*/
-void	print_stack(t_stack *stack)
+static bool	check_two_b_set(t_stack *stack)
 {
 	t_stack	*tmp;
+	int		set;
 
 	tmp = stack;
-	while (tmp)
+	set = 0;
+	while (tmp && tmp->b_set)
 	{
-		if (tmp->a_set)
-			printf("%d", tmp->a);
-		printf("\t");
-		if (tmp->b_set)
-			printf("%d", tmp->b);
-		printf("\n");
+		set++;
+		if (set >= 2)
+			return (true);
 		tmp = tmp->next;
 	}
-	printf("-\t-\na\tb\n");
+	return (false);
+}
+
+/*
+**	Swap the two first element of stack b
+**
+**	@param stack Linked list representation of stack
+*/
+void	swap_b(t_stack **stack)
+{
+	int	tmp;
+
+	if (*stack && check_two_b_set(*stack))
+	{
+		tmp = (*stack)->next->b;
+		(*stack)->next->b = (*stack)->b;
+		(*stack)->b = tmp;
+	}
 }

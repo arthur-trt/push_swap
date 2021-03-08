@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_linked_list.h                              :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 16:13:39 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/08 19:07:42 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/08 19:34:10 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/08 19:35:52 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_LINKED_LIST_H
-# define CHECKER_LINKED_LIST_H
+#include "checker.h"
 
-# include "checker.h"
-
-t_stack	*fill_stack(int	num, char **input);
-void	print_stack(t_stack *stack);
-void	free_stack(t_stack **stack);
-
-#endif
+/*
+**	Swap the two first element of stack a and b
+**
+**	@param stack Linked list representation of stack
+*/
+void	swap(t_stack **stack)
+{
+	swap_a(stack);
+	swap_b(stack);
+}

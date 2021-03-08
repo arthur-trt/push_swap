@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:22:35 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/08 16:54:43 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/08 19:11:35 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,16 @@ static t_stack	*create_new_elem_back(t_stack **stack)
 static void		add_stack_element(t_stack **stack, int a)
 {
 	t_stack		*tmp;
-	t_number	*number;
 
 	tmp = create_new_elem_back(stack);
-	number = malloc(sizeof(number));
-	number->a = a;
-	number->b = 0;
-	tmp->num = number;
+	tmp->a_set = true;
+	tmp->a = a;
+	tmp->b_set = false;
 	tmp->next = NULL;
 }
 
 /*
-**	Create the stack, fill b with 0
+**	Create the stack, set b_set to false
 **
 **	@param num Number of elem to create
 **	@param imput Array of string, will be converted in int

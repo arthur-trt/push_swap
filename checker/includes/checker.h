@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:14:43 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/08 16:43:10 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/08 19:20:04 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
 # include "checker_structures.h"
 # include "checker_utils.h"
 # include "checker_linked_list.h"
+# include "checker_operations.h"
 
 #endif
