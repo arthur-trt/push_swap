@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 19:37:15 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/09 10:57:11 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/09 11:43:43 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void	push_a(t_stack **stack)
 	#endif
 	tmp_a = find_last_unset_a(*stack);
 	tmp_b = find_first_set_b(*stack);
-
+	if (tmp_a == NULL || tmp_b == NULL)
+		return ;
 	tmp_a->a = tmp_b->b;
 	tmp_b->b_set = false;
 	tmp_a->a_set = true;
