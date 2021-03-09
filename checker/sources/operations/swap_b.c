@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 19:21:05 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/08 19:35:42 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/09 10:55:19 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static bool	check_two_b_set(t_stack *stack)
 	t_stack	*tmp;
 	int		set;
 
-	tmp = stack;
+	tmp = find_first_set_b(stack);
 	set = 0;
 	while (tmp && tmp->b_set)
 	{
@@ -36,12 +36,17 @@ static bool	check_two_b_set(t_stack *stack)
 */
 void	swap_b(t_stack **stack)
 {
-	int	tmp;
+	int		tmp;
+	t_stack	*first_b;
 
+	#ifdef DEBUG
+		printf("\nswap b\n");
+	#endif
 	if (*stack && check_two_b_set(*stack))
 	{
-		tmp = (*stack)->next->b;
-		(*stack)->next->b = (*stack)->b;
-		(*stack)->b = tmp;
+		first_b = find_first_set_b(*stack);
+		tmp = first_b->next->b;
+		first_b->next->b = first_b->b;
+		first_b->b = tmp;
 	}
 }
