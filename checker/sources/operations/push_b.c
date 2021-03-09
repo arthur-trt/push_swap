@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_utils.h                                    :+:      :+:    :+:   */
+/*   push_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 15:39:06 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/08 23:39:09 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/08 23:42:54 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/09 10:55:32 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_UTILS_H
-# define CHECKER_UTILS_H
+#include "checker.h"
 
-int		ft_atoi(const char *str);
+/*
+**	Take the first elem of stack a and put it on top of stack b
+**
+**	@param stack Chained list representing the stack
+*/
+void	push_b(t_stack **stack)
+{
+	t_stack	*tmp_a;
+	t_stack	*tmp_b;
 
-t_stack	*find_first_set_b(t_stack *stack);
-t_stack	*find_first_set_a(t_stack *stack);
+	#ifdef DEBUG
+		printf("\npush b\n");
+	#endif
+	tmp_a = find_first_set_a(*stack);
+	tmp_b = find_last_unset_b(*stack);
 
-t_stack	*find_last_unset_a(t_stack *stack);
-t_stack	*find_last_unset_b(t_stack *stack);
-
-#endif
+	tmp_b->b = tmp_a->a;
+	tmp_a->a_set = false;
+	tmp_b->b_set = true;
+}
