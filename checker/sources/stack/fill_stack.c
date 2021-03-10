@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:22:35 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/08 19:11:35 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/09 22:20:18 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ static t_stack	*create_new_elem_back(t_stack **stack)
 	{
 		*stack = new;
 		tmp = *stack;
+		(*stack)->prev = NULL;
 	}
 	else
 	{
 		tmp = *stack;
 		while (tmp->next != NULL)
 			tmp = tmp->next;
+		new->prev = tmp;
 		tmp->next = new;
 		tmp = tmp->next;
 	}

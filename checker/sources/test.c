@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_linked_list.h                              :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 16:13:39 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/08 19:07:42 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/08 23:27:21 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/08 23:40:41 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_LINKED_LIST_H
-# define CHECKER_LINKED_LIST_H
+#include "checker.h"
 
-# include "checker.h"
 
-t_stack	*fill_stack(int	num, char **input);
-void	print_stack(t_stack *stack);
-void	free_stack(t_stack **stack);
+void	test_1(t_stack	**stack)
+{
+	t_stack	*tmp;
 
-#endif
+	tmp = find_last_unset_b(*stack);
+	tmp->b = 12;
+	tmp->b_set = true;
+
+	tmp = find_last_unset_b(*stack);
+	tmp->b = 8;
+	tmp->b_set = true;
+}
+
+void	test_2(t_stack **stack)
+{
+	t_stack *tmp;
+
+	tmp = find_first_set_b(*stack);
+	tmp->b = 5;
+}
