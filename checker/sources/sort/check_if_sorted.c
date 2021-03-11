@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   check_if_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 15:14:43 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/11 13:41:38 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/11 12:10:01 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/11 12:15:55 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
-
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
-
-# include "checker_structures.h"
-# include "checker_utils.h"
-# include "checker_stack.h"
-# include "checker_operations.h"
-# include "checker_sort.h"
-# include "checker_gnl.h"
-# include "checker_input.h"
+#include "checker.h"
 
 /*
-** TEST
+**	Checks if the stack a is sorted in ascending order
+**
+**	@param stack Chained list representing the stack
+**
+**	@return true if sorted / false if not
 */
-void	test_1(t_stack	**stack);
-void	test_2(t_stack **stack);
+bool	check_if_sorted(t_stack *stack)
+{
+	t_stack	*tmp;
 
-#endif
+	tmp = stack;
+	while (tmp->next)
+	{
+		if (tmp->a > tmp->next->a)
+			return (false);
+		tmp = tmp->next;
+	}
+	return (true);
+}

@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 15:14:43 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/11 13:41:38 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/11 13:20:47 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/11 13:21:24 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
-
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
-
-# include "checker_structures.h"
-# include "checker_utils.h"
-# include "checker_stack.h"
-# include "checker_operations.h"
-# include "checker_sort.h"
-# include "checker_gnl.h"
-# include "checker_input.h"
+#include "checker.h"
 
 /*
-** TEST
+**	Duplicate a string
+**
+**	@param s1 String to duplicate
+**
+**	@return Pointer to new string
 */
-void	test_1(t_stack	**stack);
-void	test_2(t_stack **stack);
+char		*ft_strdup(const char *s1)
+{
+	int		i;
+	int		len;
+	char	*s2;
 
-#endif
+	len = ft_strlen(s1);
+	i = 0;
+	if (!(s2 = malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	while (i <= len)
+	{
+		s2[i] = s1[i];
+		i++;
+	}
+	return (s2);
+}

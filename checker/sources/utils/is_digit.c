@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   is_digit.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 15:14:43 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/11 13:41:38 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/11 12:06:15 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/11 12:06:20 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
-
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
-
-# include "checker_structures.h"
-# include "checker_utils.h"
-# include "checker_stack.h"
-# include "checker_operations.h"
-# include "checker_sort.h"
-# include "checker_gnl.h"
-# include "checker_input.h"
+#include "checker.h"
 
 /*
-** TEST
+**	Test if an ASCII code is an numercial character
+**
+**	@param c ASCII code to test (can be a char)
+**
+**	@return true if numerical / false if not
 */
-void	test_1(t_stack	**stack);
-void	test_2(t_stack **stack);
-
-#endif
+bool	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (true);
+	return (false);
+}

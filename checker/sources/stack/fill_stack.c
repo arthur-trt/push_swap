@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:22:35 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/09 22:20:18 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/11 12:08:37 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,22 @@ static void		add_stack_element(t_stack **stack, int a)
 	tmp->next = NULL;
 }
 
+static bool		check_input(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '-')
+		i++;
+	while (str[i] != '\0')
+	{
+		if (ft_isdigit(str[i]) == false)
+			return (false);
+		i++;
+	}
+	return (true);
+}
+
 /*
 **	Create the stack, set b_set to false
 **
@@ -64,6 +80,11 @@ t_stack			*fill_stack(int	num, char **input)
 	stack = NULL;
 	while (i < num)
 	{
+		if (check_input(input[i]) == false)
+		{
+			free_stack(&stack);
+			return (NULL);
+		}
 		add_stack_element(&stack, ft_atoi(input[i]));
 		i++;
 	}
