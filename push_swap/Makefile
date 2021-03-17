@@ -1,8 +1,8 @@
 #Compiler and Linker
-CC			:= gcc
+CC			:= clang-9
 
 #The Target Binary Program
-TARGET			:= checker
+TARGET			:= push_swap
 
 BUILD			:= release
 

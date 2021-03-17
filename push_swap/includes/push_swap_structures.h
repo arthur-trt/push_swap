@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_gnl.h                                      :+:      :+:    :+:   */
+/*   checker_structures.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 13:28:41 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/17 12:17:00 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/08 15:15:12 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/12 11:58:34 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_GNL_H
-# define CHECKER_GNL_H
+#ifndef PUSH_SWAP_STRUCTURES_H
+# define PUSH_SWAP_STRUCTURES_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
+#include <stdbool.h>
 
-int	get_next_line(int fd, char **line);
+typedef struct		s_number
+{
+	int				*a;
+	int				*b;
+}					t_number;
+
+
+typedef struct		s_stack
+{
+	bool			a_set;
+	int				a;
+	bool			b_set;
+	int				b;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+}					t_stack;
+
 
 #endif

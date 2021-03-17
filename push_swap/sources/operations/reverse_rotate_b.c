@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_a.c                                         :+:      :+:    :+:   */
+/*   reverse_rotate_b.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 11:24:58 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/11 14:40:46 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/09 22:43:47 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/12 12:04:59 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
 /*
-**	Shift up all elements of stack a by 1.
-**	The first element becomes the last one.
+**	Shift down all elements of stack b by 1.
+**	The last element becomes the first one.
 **
 **	@param stack Chained list representing the stack
 */
-void	rotate_a(t_stack **stack)
+void	reverse_rotate_b(t_stack **stack)
 {
-	int		first_a;
-	int		tmp_num;
 	t_stack	*tmp;
+	int		tmp_num;
 
 	#ifdef DEBUG
-		printf("\nrotate a\n");
+		printf("\nreverse rotate b\n");
 	#endif
-	tmp = find_first_set_a(*stack);
+	tmp = last_link(*stack);
 	if (tmp == NULL)
 		return ;
-	first_a = tmp->a;
-	while (tmp->next)
+	while (tmp->prev && tmp->b_set)
 	{
-		tmp_num = tmp->a;
-		tmp->a = tmp->next->a;
-		tmp->next->a = tmp_num;
-		tmp = tmp->next;
+		tmp_num = tmp->b;
+		tmp->b = tmp->prev->b;
+		tmp->prev->b = tmp_num;
+		tmp = tmp->prev;
 	}
-	tmp->a = first_a;
+	tmp = find_first_set_b(*stack);
+	tmp->b = tmp_num;
 }

@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_a.c                                         :+:      :+:    :+:   */
+/*   push_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 11:24:58 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/11 14:40:46 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/08 19:37:15 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/12 12:04:49 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
 /*
-**	Shift up all elements of stack a by 1.
-**	The first element becomes the last one.
+**	Take the first elem of stack b and put it on top of stack a
 **
 **	@param stack Chained list representing the stack
 */
-void	rotate_a(t_stack **stack)
+void	push_a(t_stack **stack)
 {
-	int		first_a;
-	int		tmp_num;
-	t_stack	*tmp;
+	t_stack	*tmp_a;
+	t_stack	*tmp_b;
 
 	#ifdef DEBUG
-		printf("\nrotate a\n");
+		printf("\npush a\n");
 	#endif
-	tmp = find_first_set_a(*stack);
-	if (tmp == NULL)
+	tmp_a = find_last_unset_a(*stack);
+	tmp_b = find_first_set_b(*stack);
+	if (tmp_a == NULL || tmp_b == NULL)
 		return ;
-	first_a = tmp->a;
-	while (tmp->next)
-	{
-		tmp_num = tmp->a;
-		tmp->a = tmp->next->a;
-		tmp->next->a = tmp_num;
-		tmp = tmp->next;
-	}
-	tmp->a = first_a;
+	tmp_a->a = tmp_b->b;
+	tmp_b->b_set = false;
+	tmp_a->a_set = true;
 }

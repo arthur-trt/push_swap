@@ -6,11 +6,11 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 13:22:09 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/17 12:21:10 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/12 12:05:46 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
 /*
 **	Cut string s, from start with len size
@@ -27,10 +27,7 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	if (ft_strlen(s) <= start)
-	{
-		write(1, "caca\n", 5);
 		return (ft_strdup(""));
-	}
 	if (ft_strlen(s + start) < len)
 		len = ft_strlen(s + start);
 	if (!(s2 = malloc((len + 1) * sizeof(char))))

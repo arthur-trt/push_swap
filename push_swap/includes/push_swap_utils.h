@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_gnl.h                                      :+:      :+:    :+:   */
+/*   push_swap_utils.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 13:28:41 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/17 12:17:00 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/08 15:39:06 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/12 12:06:37 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_GNL_H
-# define CHECKER_GNL_H
+#ifndef PUSH_SWAP_UTILS_H
+# define PUSH_SWAP_UTILS_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
+#include <stdlib.h>
 
-int	get_next_line(int fd, char **line);
+int		ft_atoi(const char *str);
+bool	ft_isdigit(int c);
+
+size_t		ft_strlen(char const *s);
+char		*ft_strjoin(char **s1, char *s2);
+char		*ft_strdup(const char *s1);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

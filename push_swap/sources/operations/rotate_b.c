@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_a.c                                         :+:      :+:    :+:   */
+/*   rotate_b.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 11:24:58 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/11 14:40:46 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/09 11:37:33 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/12 12:05:06 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
 /*
-**	Shift up all elements of stack a by 1.
+**	Shift up all elements of stack b by 1.
 **	The first element becomes the last one.
 **
 **	@param stack Chained list representing the stack
 */
-void	rotate_a(t_stack **stack)
+void	rotate_b(t_stack **stack)
 {
-	int		first_a;
+	int		first_b;
 	int		tmp_num;
 	t_stack	*tmp;
 
 	#ifdef DEBUG
-		printf("\nrotate a\n");
+		printf("\nrotate b\n");
 	#endif
-	tmp = find_first_set_a(*stack);
+	tmp = find_first_set_b(*stack);
 	if (tmp == NULL)
 		return ;
-	first_a = tmp->a;
+	first_b = tmp->b;
 	while (tmp->next)
 	{
-		tmp_num = tmp->a;
-		tmp->a = tmp->next->a;
-		tmp->next->a = tmp_num;
+		tmp_num = tmp->b;
+		tmp->b = tmp->next->b;
+		tmp->next->b = tmp_num;
 		tmp = tmp->next;
 	}
-	tmp->a = first_a;
+	tmp->b = first_b;
 }

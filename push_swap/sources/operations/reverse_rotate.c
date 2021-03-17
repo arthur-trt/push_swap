@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_a.c                                         :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 11:24:58 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/11 14:40:46 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/10 12:15:59 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/12 12:05:02 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
 /*
-**	Shift up all elements of stack a by 1.
-**	The first element becomes the last one.
+**	Shift down all elements of stack a and b by 1.
+**	The last element becomes the first one.
 **
 **	@param stack Chained list representing the stack
 */
-void	rotate_a(t_stack **stack)
+void	reverse_rotate(t_stack **stack)
 {
-	int		first_a;
-	int		tmp_num;
-	t_stack	*tmp;
-
-	#ifdef DEBUG
-		printf("\nrotate a\n");
-	#endif
-	tmp = find_first_set_a(*stack);
-	if (tmp == NULL)
-		return ;
-	first_a = tmp->a;
-	while (tmp->next)
-	{
-		tmp_num = tmp->a;
-		tmp->a = tmp->next->a;
-		tmp->next->a = tmp_num;
-		tmp = tmp->next;
-	}
-	tmp->a = first_a;
+	reverse_rotate_a(stack);
+	reverse_rotate_b(stack);
 }

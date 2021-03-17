@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_gnl.h                                      :+:      :+:    :+:   */
+/*   is_digit.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 13:28:41 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/17 12:17:00 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/11 12:06:15 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/12 12:05:51 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_GNL_H
-# define CHECKER_GNL_H
+#include "push_swap.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
-
-int	get_next_line(int fd, char **line);
-
-#endif
+/*
+**	Test if an ASCII code is an numercial character
+**
+**	@param c ASCII code to test (can be a char)
+**
+**	@return true if numerical / false if not
+*/
+bool	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (true);
+	return (false);
+}

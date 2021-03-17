@@ -4,14 +4,6 @@
 
 SOURCES		+=                                  		\
 		sources/main.c                             	\
-		sources/test.c                             	\
-		sources/input.c                            	\
-
-
-## SOURCES/SORT ##
-
-SOURCES		+=                                  		\
-		sources/sort/check_if_sorted.c             	\
 
 
 ## SOURCES/OPERATIONS ##

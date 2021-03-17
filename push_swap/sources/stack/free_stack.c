@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_gnl.h                                      :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 13:28:41 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/17 12:17:00 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/08 19:04:58 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/12 12:05:24 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_GNL_H
-# define CHECKER_GNL_H
+#include "push_swap.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
+/*
+**	Free the stack linked list
+**
+**	@param stack Linked list to free
+*/
+void	free_stack(t_stack **stack)
+{
+	t_stack	*tmp;
+	t_stack	*next;
 
-int	get_next_line(int fd, char **line);
-
-#endif
+	if (*stack)
+	{
+		tmp = *stack;
+		while (tmp)
+		{
+			next = tmp->next;
+			free(tmp);
+			tmp = next;
+		}
+		*stack = NULL;
+	}
+}

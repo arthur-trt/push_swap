@@ -6,13 +6,11 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:22:35 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/13 11:19:52 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/13 11:26:22 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
-
-#include <limits.h>
+#include "push_swap.h"
 
 static t_stack	*create_new_elem_back(t_stack **stack)
 {
@@ -51,13 +49,9 @@ static void		add_stack_element(t_stack **stack, int a)
 
 static bool		check_input(char *str)
 {
-	size_t			len;
-	int				i;
+	int	i;
 
 	i = 0;
-	len = ft_strlen(str);
-	if (len > 10 || (str[0] == '-' && len > 11))
-		return (false);
 	if (str[i] == '-')
 		i++;
 	while (str[i] != '\0')

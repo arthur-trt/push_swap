@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 19:21:05 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/09 10:55:19 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/11 14:41:13 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static bool	check_two_b_set(t_stack *stack)
 /*
 **	Swap the two first element of stack b
 **
-**	@param stack Linked list representation of stack
+**	@param stack Chained list representing the stack
 */
 void	swap_b(t_stack **stack)
 {

@@ -6,11 +6,11 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:14:31 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/11 14:41:09 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/12 12:05:10 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
 static bool	check_two_a_set(t_stack *stack)
 {

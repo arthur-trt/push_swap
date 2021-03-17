@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_gnl.h                                      :+:      :+:    :+:   */
+/*   push_swap_stack.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 13:28:41 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/17 12:17:00 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/08 16:13:39 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/12 11:59:48 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_GNL_H
-# define CHECKER_GNL_H
+#ifndef PUSH_SWAP_STACK_H
+# define PUSH_SWAP_STACK_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
+# include "checker.h"
 
-int	get_next_line(int fd, char **line);
+t_stack	*fill_stack(int	num, char **input);
+
+t_stack	*find_first_set_b(t_stack *stack);
+t_stack	*find_first_set_a(t_stack *stack);
+
+t_stack	*find_last_unset_a(t_stack *stack);
+t_stack	*find_last_unset_b(t_stack *stack);
+
+t_stack	*last_link(t_stack *stack);
+
+void	print_stack(t_stack *stack);
+void	free_stack(t_stack **stack);
 
 #endif
