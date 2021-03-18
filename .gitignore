@@ -1,4 +1,5 @@
 .vscode
+*.dSYM
 checker/checker
 *.o
 *.d

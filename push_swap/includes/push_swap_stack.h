@@ -6,14 +6,14 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 16:13:39 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/12 11:59:48 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/18 15:08:35 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_STACK_H
 # define PUSH_SWAP_STACK_H
 
-# include "checker.h"
+# include "push_swap.h"
 
 t_stack	*fill_stack(int	num, char **input);
 

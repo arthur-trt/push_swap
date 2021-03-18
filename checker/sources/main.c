@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:14:07 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/17 15:09:12 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/18 12:09:47 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ int			main(int argc, char **argv)
 	print_stack(stack);
 	printf("Sorted : %d\n", check_if_sorted(stack));
 	free_stack(&stack);
+	system("leaks checker");
 	return (EXIT_SUCCESS);
 }

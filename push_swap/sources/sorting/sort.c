@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/12 12:00:18 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/18 15:08:09 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/18 14:11:28 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/18 14:21:19 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <errno.h>
-# include <limits.h>
+static int	find_center(t_stack **stack)
+{
+	
+}
 
-# include "push_swap_structures.h"
-# include "push_swap_utils.h"
-# include "push_swap_stack.h"
-# include "push_swap_operations.h"
+void	sort(t_stack **stack)
+{
 
-/*
-** TEST
-*/
-void	test_1(t_stack	**stack);
-void	test_2(t_stack **stack);
-
-#endif
+}

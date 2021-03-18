@@ -1,5 +1,8 @@
 #Compiler and Linker
-CC			:= clang-9
+CC				:= clang-9
+ifeq ($(shell uname -s),Darwin)
+	CC			:= gcc
+endif
 
 #The Target Binary Program
 TARGET			:= push_swap
