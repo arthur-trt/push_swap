@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 11:37:33 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/12 12:05:06 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/26 10:55:32 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	rotate_b(t_stack **stack)
 
 	#ifdef DEBUG
 		printf("\nrotate b\n");
+	#else
+		printf("rb\n");
 	#endif
 	tmp = find_first_set_b(*stack);
 	if (tmp == NULL)

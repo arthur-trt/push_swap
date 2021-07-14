@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_sort.h                                     :+:      :+:    :+:   */
+/*   push_swap_sort.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 12:12:23 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/27 15:09:01 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/25 11:54:27 by atrouill          #+#    #+#             */
+/*   Updated: 2021/05/14 20:49:36 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_SORT_H
-# define CHECKER_SORT_H
+#ifndef PUSH_SWAP_SORT_H
+# define PUSH_SWAP_SORT_H
 
-# include "checker_structures.h"
+# include "push_swap.h"
 
 bool	check_if_sorted(t_stack *stack);
-bool	exec_operations(t_op *op, t_stack **stack);
-void	free_op(t_op **op);
+
+int		min_stack_a(t_stack *stack);
+int		min_stack_b(t_stack *stack);
+
+int		second_min_stack_a(t_stack *stack);
+
+void	sort_small(t_stack *stack, int len);
 
 #endif

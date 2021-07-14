@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_sort.h                                     :+:      :+:    :+:   */
+/*   free_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 12:12:23 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/27 15:09:01 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/27 15:06:33 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/27 15:08:52 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_SORT_H
-# define CHECKER_SORT_H
+#include "checker.h"
 
-# include "checker_structures.h"
+/*
+**	Free the operation chained list
+**
+**	@param op Chained list to free
+*/
+void	free_op(t_op **op)
+{
+	t_op	*tmp;
+	t_op	*next;
 
-bool	check_if_sorted(t_stack *stack);
-bool	exec_operations(t_op *op, t_stack **stack);
-void	free_op(t_op **op);
-
-#endif
+	if (*op)
+	{
+		tmp = *op;
+		while (tmp)
+		{
+			next = tmp->next;
+			free(tmp->operations);
+			free(tmp);
+			tmp = next;
+		}
+		*op = NULL;
+	}
+}

@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_sort.h                                     :+:      :+:    :+:   */
+/*   push_swap_gnl.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 12:12:23 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/27 15:09:01 by atrouill         ###   ########.fr       */
+/*   Created: 2021/03/11 13:28:41 by atrouill          #+#    #+#             */
+/*   Updated: 2021/03/25 11:57:54 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_SORT_H
-# define CHECKER_SORT_H
+#ifndef PUSH_SWAP_GNL_H
+# define PUSH_SWAP_GNL_H
 
-# include "checker_structures.h"
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
-bool	check_if_sorted(t_stack *stack);
-bool	exec_operations(t_op *op, t_stack **stack);
-void	free_op(t_op **op);
+int	get_next_line(int fd, char **line);
 
 #endif

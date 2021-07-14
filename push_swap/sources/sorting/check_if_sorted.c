@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_sort.h                                     :+:      :+:    :+:   */
+/*   check_if_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 12:12:23 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/27 15:09:01 by atrouill         ###   ########.fr       */
+/*   Created: 2021/05/14 15:12:26 by atrouill          #+#    #+#             */
+/*   Updated: 2021/05/14 19:47:56 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_SORT_H
-# define CHECKER_SORT_H
+#include "push_swap.h"
 
-# include "checker_structures.h"
+/*
+**	Checks if the stack a is sorted in ascending order
+**
+**	@param stack Chained list representing the stack
+**
+**	@return true if sorted / false if not
+*/
+bool	check_if_sorted(t_stack *stack)
+{
+	t_stack	*tmp;
 
-bool	check_if_sorted(t_stack *stack);
-bool	exec_operations(t_op *op, t_stack **stack);
-void	free_op(t_op **op);
-
-#endif
+	tmp = find_first_set_a(stack);
+	while (tmp->next)
+	{
+		if (tmp->a > tmp->next->a)
+			return (false);
+		tmp = tmp->next;
+	}
+	return (true);
+}

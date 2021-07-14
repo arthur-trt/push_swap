@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 11:49:33 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/12 12:04:56 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/26 10:54:18 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	reverse_rotate_a(t_stack **stack)
 
 	#ifdef DEBUG
 		printf("\nreverse rotate a\n");
+	#else
+		printf("rra\n");
 	#endif
 	tmp = last_link(*stack);
 	if (tmp == NULL)

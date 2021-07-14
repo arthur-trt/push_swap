@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 19:21:05 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/12 12:05:13 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/26 10:55:53 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	swap_b(t_stack **stack)
 
 	#ifdef DEBUG
 		printf("\nswap b\n");
+	#else
+		printf("sb\n");
 	#endif
 	if (*stack && check_two_b_set(*stack))
 	{

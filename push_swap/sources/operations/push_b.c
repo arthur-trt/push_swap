@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 23:42:54 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/12 12:04:54 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/26 10:54:31 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	push_b(t_stack **stack)
 
 	#ifdef DEBUG
 		printf("\npush b\n");
+	#else
+		printf("pb\n");
 	#endif
 	tmp_a = find_first_set_a(*stack);
 	tmp_b = find_last_unset_b(*stack);

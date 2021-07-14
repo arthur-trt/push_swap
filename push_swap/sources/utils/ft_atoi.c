@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:37:17 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/13 11:25:31 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/25 11:55:31 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	*ft_clean_str(const char *str)
 **
 **	@return int representation of the string
 */
-nt			ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	int				neg;
 	int				i;

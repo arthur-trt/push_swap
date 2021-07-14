@@ -6,7 +6,7 @@
 /*   By: atrouill <atrouill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:15:12 by atrouill          #+#    #+#             */
-/*   Updated: 2021/03/09 22:33:54 by atrouill         ###   ########.fr       */
+/*   Updated: 2021/03/27 14:32:09 by atrouill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define CHECKER_STRUCTURES_H
 
 #include <stdbool.h>
+
+typedef struct		s_op
+{
+	char			*operations;
+	struct s_op		*next;
+}					t_op;
+
 
 typedef struct		s_number
 {
